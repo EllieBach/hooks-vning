@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Counter/>
+      <Counter initialValue={0} min={1} max={10}/>
     </>
   )
 }

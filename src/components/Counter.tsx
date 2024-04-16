@@ -1,15 +1,17 @@
-import React from 'react'
-import {useCounter} from '../hooks/useCounter'
+import React from 'react';
+import { useCounter } from '../hooks/useCounter'; 
 
-const Counter = () => {
-    const counter = useCounter();
-  return (
-    <>
-    <p>count {counter.count}</p>
-    <button onClick={counter.increment}>increment</button>
-    <button onClick={counter.decrement}>decrement</button>
-    </>
-  )
-}
+const Counter = ({ initialValue, min, max }: { initialValue: number; min: number; max: number }) => {
+    const counter = useCounter(initialValue, min, max); 
+    
+    return (
+        <>
+            <p>Count: {counter.count}</p>
+            <button onClick={counter.increment}>Increment</button>
+            <button onClick={counter.decrement}>Decrement</button>
+            <button onClick={counter.reset}>Reset</button>
+        </>
+    );
+};
 
-export default Counter
+export default Counter;
